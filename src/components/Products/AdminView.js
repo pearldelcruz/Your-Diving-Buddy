@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Col, Row, Table, Button, Modal, Form } from 'react-bootstrap'
 
-import {GrUpdate} from 'react-icons/gr'
-import {MdDeleteForever, MdArchive,MdUnarchive} from 'react-icons/md'
+import {FaEdit, FaTrashAlt} from 'react-icons/fa'
+import {MdArchive,MdUnarchive} from 'react-icons/md'
 
 import Swal from 'sweetalert2'
 
@@ -57,6 +57,7 @@ function AdminView(props) {
 		const prodArr = productData.map( (product) => {
 			console.log(product)
 			return(
+				
 				<tr key={product._id}>
 					<td>{product.name}</td>
 					<td>{product.description}</td>
@@ -71,32 +72,17 @@ function AdminView(props) {
 					</td>
 					<td>
 						<>
-							<Button variant="primary" size="sm" 
-							onClick={ ()=> openEdit(product._id) }>
-								<span className="p-1"><GrUpdate/></span>
-							</Button>
-								<span className="p-1"></span>
-							<Button variant="danger" size="sm"
-							onClick={ () => deleteToggle(product._id)}>
-								<span className="p-1"><MdDeleteForever/></span>
-							</Button>
-							<span className="p-1"></span>
+							<Button variant="info" size="sm" className="mx-1 p-2" onClick={ () => openEdit(product._id) }><FaEdit/>{/* Edit */}</Button>
+							<Button variant="danger" size="sm"  className="mx-1 p-2" onClick={ () => deleteToggle(product._id)}><FaTrashAlt/>{/* Delete */}</Button>
+				
 						</>
 
 						{
 							(product.isActive === true) ?
-								<Button variant="warning" size="sm"
-								onClick={()=> archiveToggle(product._id, product.isActive)}>
-									<span className="p-1"><MdUnarchive/></span> 
-									{/* Disable */}
-								</Button>
+								<Button variant="warning" size="sm" className="mx-1 p-2" onClick={ () => archiveToggle(product._id, product.isActive)}><MdUnarchive/> {/* Archive */} </Button>
 							:
 								
-								<Button variant="success" size="sm"
-								onClick={ () => unarchiveToggle(product._id, product.isActive)}>
-									{/* Enable */}
-									<span className="p-1"><MdArchive/></span>
-								</Button>
+								<Button variant="success" size="sm" className="mx-1 p-2" onClick={ () => unarchiveToggle(product._id, product.isActive)}>{/* Unarchive */}<MdArchive/></Button>
 						}
 					</td>
 				</tr>
@@ -146,7 +132,7 @@ function AdminView(props) {
 				Swal.fire({
 					title: "Failed",
 					icon: "error",
-					text: "Product not updated. Please try again"
+					text: "Oh-oh! Something went wrong. Please try again."
 				})
 			}
 		})
@@ -181,7 +167,7 @@ function AdminView(props) {
 				Swal.fire({
 					title: "Failed",
 					icon: "error",
-					"text": "Something went wrong"
+					"text": "Oh-oh! Something went wrong. Please try again."
 				})
 			}
 		})
@@ -214,7 +200,7 @@ function AdminView(props) {
 				Swal.fire({
 					title: "Failed",
 					icon: "error",
-					"text": "Something went wrong"
+					"text": "Oh-oh! Something went wrong. Please try again."
 				})
 			}
 		})
@@ -245,7 +231,7 @@ function AdminView(props) {
 				Swal.fire({
 					title: "Failed",
 					icon: "error",
-					"text": "Something went wrong"
+					"text": "Oh-oh! Something went wrong. Please try again."
 				})
 			}
 		})
@@ -277,7 +263,7 @@ function AdminView(props) {
 				Swal.fire({
 					title: "Success",
 					icon: "success",
-					text: "Product successfully added"
+					text: "You have successfully added a product"
 				})
 
 				setName('');
@@ -292,7 +278,7 @@ function AdminView(props) {
 				Swal.fire({
 					title: "Failed",
 					icon: "error",
-					text: "Something went wrong"
+					text: "Oh-oh! Something went wrong. Please try again"
 				})
 			}
 		})
@@ -301,16 +287,14 @@ function AdminView(props) {
     return (
         <Col className="mt-5 p-3 justify-content-center">
             <Row className="justify-content-center">
-                <Col sm={10} md={10}>
+                <Col sm={12} md={10}>
                     
-                    <h2 className="text-center">Admin Dashboard</h2>
-                    <div className="d-flex justify-content-end mb-3">
+                    <h2 className="text-center">Admin Dashboard</h2>   
+					<div className="d-flex justify-content-end mb-3">
                         <Button variant="primary" onClick={openAdd}>Add New Product</Button>
                     </div>
-                    
-
-                    <Table>
-                        <thead>
+                    <Table responsive="sm" variant="dark">
+                        <thead className="text-center">
                             <tr>
                                 <th>Name</th>
                                 <th>Description</th>
@@ -341,7 +325,7 @@ function AdminView(props) {
 						</Form.Group>
 						<Form.Group controlId="Description">
 							<Form.Label>Description</Form.Label>
-							<Form.Control
+							<Form.Control as="textarea" rows={3}
 								type="text"
 								value={description}
 								onChange={(e) => setDescription(e.target.value)} 
@@ -369,22 +353,25 @@ function AdminView(props) {
                             <Modal.Title>Add Product</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
-                            <Form.Group controlId="name" >
-                                <Form.Label>Name</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)} 
-                                    />
-                            </Form.Group>
+                            <Form.Group>
+							<Form.Label>Product Name:</Form.Label>
+							<Form.Control
+								type="text"
+								placeholder="Product Name"
+								value={name}
+								onChange={(e) => setName(e.target.value)}
+							/>
+							</Form.Group>
+
                             <Form.Group controlId="description">
                                 <Form.Label>Description</Form.Label>
-                                <Form.Control
+                                <Form.Control as="textarea" rows={3}
                                     type="text"
                                     value={description}
                                     onChange={(e) => setDescription(e.target.value)} 
                                     />
                             </Form.Group>
+
                             <Form.Group controlId="price">
                                 <Form.Label>Price</Form.Label>
                                 <Form.Control
@@ -393,6 +380,7 @@ function AdminView(props) {
                                     onChange={(e) => setPrice(e.target.value)} 
                                     />
                             </Form.Group>
+
                         </Modal.Body>
                         <Modal.Footer>
                             <Button variant="secondary" onClick={closeAdd}>Close</Button>

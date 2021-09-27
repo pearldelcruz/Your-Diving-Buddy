@@ -1,12 +1,10 @@
 import React from 'react'
-// import Navbar from '../Navbar'
-import {HeroContainer} from './HeroStyle'
 
-const Hero = () => {
+function Hero() {
     return (
-        <HeroContainer> 
-            {/* <Navbar/> */}
-        </HeroContainer>
+        <div>
+            
+        </div>
     )
 }
 

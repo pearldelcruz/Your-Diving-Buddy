@@ -1,49 +1,46 @@
 import React, { useEffect,useContext, useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 import AdminView from '../components/Products/AdminView';
 import UserView from '../components/Products/UserView';
 
-import UserContext from './../UserContext'
+import UserContext from './../UserContext';
 
 function Products() {
 
-    const [products, setProducts] = useState([]);
-    const {user} = useContext(UserContext);
+	const [products, setProducts] = useState([]);
 
-    const fetchData = () =>  {
-        let token = localStorage.getItem('token')
+	const {user} = useContext(UserContext);
 
-        fetch(`https://gentle-wave-67856.herokuapp.com/api/products/allProducts`, 
-            {
-                method: "GET",
-                headers: 
-                    {
-                        "Authorization": `Bearer ${token}`
-                    }
-            })
-            .then(result => result.json())
-            .then(result =>{
-                console.log(result)
-                setProducts(result);
-            })
-    }
+	const fetchData = () => {
+		let token = localStorage.getItem('token')
 
-    useEffect(()=>{
-       
-        fetchData()
-    },[])
+		fetch('https://gentle-wave-67856.herokuapp.com/api/products/allProducts',{
+			method: "GET",
+			headers: {
+				"Authorization": `Bearer ${token}`
+			}
+		})
+		.then(result => result.json())
+		.then(result => {
+			console.log(result)
+			setProducts(result)
+		})
+	}
 
-    return (
-        <Container className="mt-5">
-            {
-                (user.isAdmin === true)?
-                        <AdminView productData={products} fetchData={fetchData}/>
-                        :
-                        <UserView productData={products}/>
-            }
-        </Container>
-    )
+	useEffect( () => {
+		fetchData()
+	}, [])
+ 
+	return(
+		<Container className="p-4">
+			{ (user.isAdmin === true) ?
+					<AdminView productData={products} fetchData={fetchData}/>
+				:
+					<UserView productData={products} />
+			}
+		</Container>
+	)
 }
 
 export default Products
