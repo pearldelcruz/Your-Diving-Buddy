@@ -30,7 +30,7 @@ function SingleProduct() {
 		)
 		.then(result => result.json())
 		.then(result => {
-			console.log(result)
+			
 
 			setName(result.name);
 			setDescription(result.description);
@@ -53,7 +53,7 @@ function SingleProduct() {
 		)
 		.then(result => result.json())
 		.then(result => {
-			console.log(result)
+			
 
 			if(result === true){
 

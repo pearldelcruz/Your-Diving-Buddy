@@ -9,7 +9,7 @@ import './Hero.css'
 function Hero() {
 
     const {user} = useContext(UserContext)
-    console.log(user)
+    
     return (
         <div className='hero-container'>
             

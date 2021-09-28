@@ -62,13 +62,13 @@ function Feature() {
             })
             .then(result => result.json())
             .then(result => {
-                console.log(result)
+                
                 let feature = Math.floor(Math.random()*result.length);
-                console.log(result[feature])
+                
                 setName(result[feature].name);
                 setDescription(result[feature].description)
 
-                console.log(data)
+                
                 let featuredImg = Math.floor(Math.random()*data.length);
                 setImg(data[featuredImg].imgSrc);
                 

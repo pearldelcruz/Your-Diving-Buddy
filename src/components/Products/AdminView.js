@@ -8,7 +8,7 @@ import '../../App.css'
 import Swal from 'sweetalert2'
 
 function AdminView(props) {
-    console.log(props)
+
 
     const { productData, fetchData} = props;
 
@@ -35,7 +35,7 @@ function AdminView(props) {
 		})
 		.then(result => result.json())
 		.then(result => {
-			console.log(result)
+		
 
 			setProductId(result._id);
 			setName(result.name);
@@ -56,7 +56,7 @@ function AdminView(props) {
 
 	useEffect( () => {
 		const prodArr = productData.map( (product) => {
-			console.log(product)
+			
 			return(
 				
 				<tr key={product._id}>
@@ -112,7 +112,7 @@ function AdminView(props) {
 		})
 		.then(result => result.json())
 		.then(result => {
-			console.log(result) 
+			
 
 			fetchData()
 
@@ -154,7 +154,7 @@ function AdminView(props) {
 		})
 		.then(result => result.json())
 		.then(result => {
-			console.log(result)
+			
 
 			fetchData();
 			if(result === true){
@@ -187,7 +187,7 @@ function AdminView(props) {
 		})
 		.then(result => result.json())
 		.then(result => {
-			console.log(result)
+			
 
 			fetchData();
 			if(result === true){
@@ -218,7 +218,7 @@ function AdminView(props) {
 		})
 		.then(result => result.json())
 		.then(result => {
-			console.log(result)
+			
 
 			fetchData();
 			if(result === true){
@@ -255,8 +255,7 @@ function AdminView(props) {
 		})
 		.then(result => result.json())
 		.then(result => {
-			console.log(result)
-			console.log(typeof result)
+		
 
 			if(typeof result !== 'undefined'){
 				fetchData()

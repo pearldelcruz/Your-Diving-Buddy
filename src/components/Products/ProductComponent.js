@@ -6,10 +6,9 @@ import './Product.css';
 
 function ProductComponent({productProp}) {
 	
-	console.log(productProp)
+	
 	const {name, description, price, _id} = productProp
 
-	// console.log(_id)
 	
 	return(
 		

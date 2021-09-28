@@ -46,7 +46,7 @@ function App() {
           })
           .then(result => result.json())
           .then(result => {
-            console.log(result) 
+            
 
             if(typeof result._id !== "undefined")
             {

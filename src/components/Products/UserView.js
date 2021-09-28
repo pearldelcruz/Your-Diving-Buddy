@@ -4,13 +4,13 @@ import ProductComponent from './ProductComponent';
 
 function UserView({productData}){
 
-	console.log(productData)
+	
 
 	const [products, setProducts] = useState([])
 
 	useEffect( () => {
 		const prodArr = productData.map( (product) => {
-			// console.log(product)
+			
 			if(product.isActive === true){
 				return <ProductComponent key={product._id} productProp={product}/>
 			} else {
