@@ -1,8 +1,9 @@
 import React, {useContext, useEffect, useState}from 'react'
 import { Col, Row, Form, Button } from 'react-bootstrap'
-import { useHistory, Redirect } from 'react-router-dom';
+import { useHistory, Redirect, Link } from 'react-router-dom';
 import UserContext from './../UserContext'
 import Swal from 'sweetalert2';
+import '../App.css'
 
 function Register() {
 
@@ -106,7 +107,7 @@ function Register() {
 		:
         <Col className="mt-5 p-3 justify-content-center">
             <Row className="justify-content-center">
-                <Col sm={true} md={3}>
+                <Col sm={true} md={3} className="form-style-register">
                     <div className="text-center"><h1>Register</h1></div>
                     <Form onSubmit={(e)=> register(e)}>
                     <Form.Group className="mb-3" controlId="formlirstName">
@@ -129,11 +130,12 @@ function Register() {
                     <Form.Control type="password" placeholder="Confirm Password" value={password2} onChange={(e)=> setPassword2(e.target.value)}/>
                     </Form.Group>
                     <div className="d-grid gap-2">
-                    <Button variant="primary" type="submit" disabled={isDisabled}>
+                    <Button className="btn-style" variant="primary" type="submit" disabled={isDisabled}>
                             Create
                     </Button>
                     </div>
                     </Form>   
+					
                 </Col>
             </Row>
         </Col>

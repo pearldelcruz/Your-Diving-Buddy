@@ -3,6 +3,7 @@ import { Col, Row, Table, Button, Modal, Form } from 'react-bootstrap'
 
 import {FaEdit, FaTrashAlt} from 'react-icons/fa'
 import {MdArchive,MdUnarchive} from 'react-icons/md'
+import '../../App.css'
 
 import Swal from 'sweetalert2'
 
@@ -287,13 +288,13 @@ function AdminView(props) {
     return (
         <Col className="mt-5 p-3 justify-content-center">
             <Row className="justify-content-center">
-                <Col sm={12} md={10}>
+                <Col sm={12} md={12} className="form-style-dashboard">
                     
                     <h2 className="text-center">Admin Dashboard</h2>   
 					<div className="d-flex justify-content-end mb-3">
                         <Button variant="primary" onClick={openAdd}>Add New Product</Button>
                     </div>
-                    <Table responsive="sm" variant="dark">
+                    <Table responsive="sm">
                         <thead className="text-center">
                             <tr>
                                 <th>Name</th>

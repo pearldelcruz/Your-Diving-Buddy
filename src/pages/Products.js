@@ -1,8 +1,9 @@
-import React, { useEffect,useContext, useState } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import { Container } from 'react-bootstrap';
 
 import AdminView from '../components/Products/AdminView';
 import UserView from '../components/Products/UserView';
+
 
 import UserContext from './../UserContext';
 

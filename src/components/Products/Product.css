@@ -1,0 +1,39 @@
+
+.container{
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    
+}
+
+.product-card {
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    border-radius: 10px;
+    border: 1px solid rgba(3, 3, 3, 0.18);
+    height: 100%;
+    width: 50vh;
+    flex-basis: 100%;
+    flex-grow: 1px;
+    justify-content: space-around;
+    font-size: inherit;
+}
+
+.product-card> h1, h5 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.product-card:hover{
+    /*color: rgba(10, 4, 38, 0.324);*/
+    padding: 2px;
+    font-weight: bolder;
+    transition: 450ms;
+    
+}
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+.nav-style {
+    background-color: #0f3e59;
+    font-size: 20px;
+    height: 200%;
+    background: #054489aa;
+    box-shadow:  25px 25px 30px #111b29,
+                -25px -25px 30px #05316a;
+}
+
+.nav-link{
+    font-family: 'Poppins', sans-serif;
+    color: #fff !important;
+    justify-content: space-around;
+    margin-left: 20px;
+    font-weight: 400;
+  }
+
+  .nav-icon{
+      color: #fff !important;
+      font-size: 20px;
+  }
+

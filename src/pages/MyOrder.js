@@ -1,20 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Col, Row, Table, Button } from 'react-bootstrap'
 // import UserContext from '../UserContext'
 import {MdPayment} from 'react-icons/md'
+import '../App.css'
 
 
 function MyOrder() {
 
-
-//    const [productId, setProductId] = useState('');
-//    const [orderedOn, setOrderedOn] = useState('');
-//    const [totalOrderValue, setTotalOrderValue] = useState(0);
-
    const orderArr = []
    const [orderList, setOrderList] = useState([])
 
-    // const {user, setUser} = useContext(UserContext);
+    
     let token = localStorage.getItem('token')
 
 useEffect( () => {
@@ -37,11 +33,6 @@ useEffect( () => {
 
                 console.log(orderArr)
 
-                // setProductId(data.productId);
-                // setOrderedOn(data.orderedOn);
-                // setTotalOrderValue(data.totalOrderValue);
-
-                // setOrders(data);
                 const orders = orderArr.map((info)=>{
                     return(
                             
@@ -59,28 +50,12 @@ useEffect( () => {
         })
 }, [])
 
-// useEffect (()=>{
-//     const orders = orderArr.map((e)=>{
-//         return(
-				
-//             <tr key={e.productId}>
-//                 <td>{e.productId}</td>
-//                 <td>{e.orderedOn}</td>
-//                 <td>{e.totalOrderValue}</td>
-//             </tr>
-//         )
-//     })
-//     setOrderList(orders)
-// },[])
-
-
-
     return (
 
         <Col className="mt-5 p-3 justify-content-center">
             <Row className="justify-content-center">
-                <Col sm={12} md={6}>
-                    <div className="text-center" mb-3><h1>My Purchase</h1></div>
+                <Col sm={12} md={6} className="form-style-cart">
+                    <div className="text-center" mb-3><h1>My Subscription</h1></div>
                     <Table responsive>
                     <thead className="text-center">
                     <tr>

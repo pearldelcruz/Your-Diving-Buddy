@@ -1,16 +1,98 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
+ body {
+    
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    font-weight: 500;
+    font-size:16px; 
+    overflow:auto;
+    color: rgb(2, 6, 24);
+
+ } 
+
+ .form-style-login{
+   height: 60vh;
+   padding: 20px;
+   border-radius: 20px;
+   background: linear-gradient(145deg, #dfdfe6, #ffffff);
+   box-shadow:  12px 12px 24px #d3d3d9,
+                -12px -12px 24px #ffffff;
+   
+ }
+
+ .btn-style{
+    width: 100%;
+    background-color: #135eaecd
+ }
+
+ .btn-2{
+    width: 100%;
+ }
+
+.form-style-register{
+
+   height: 80vh;
+   padding: 20px;
+
+   border-radius: 20px;
+   background: linear-gradient(145deg, #dfdfe6, #ffffff);
+   box-shadow:  12px 12px 24px #d3d3d9,
+                -12px -12px 24px #ffffff;
+
+}
+
+.form-style-addProduct{
+   height: 80vh;
+   padding: 20px;
+   border-radius: 20px;
+   background: linear-gradient(145deg, #dfdfe6, #ffffff);
+   box-shadow:  12px 12px 24px #d3d3d9,
+                -12px -12px 24px #ffffff;
+}
+
+.form-style-dashboard{
+   padding: 20px;
+   max-width: 100%;
+   /* border-radius: 20px; */
+   /* background: linear-gradient(145deg, #dfdfe6, #ffffff); */
+   box-shadow:  12px 12px 24px #d3d3d9,
+                -12px -12px 24px #ffffff;
+}
+
+.form-style-cart{
+   padding: 20px;
+   max-width: 100%;
+   /* border-radius: 20px; */
+   /* background: linear-gradient(145deg, #dfdfe6, #ffffff); */
+   box-shadow:  12px 12px 24px #d3d3d9,
+                -12px -12px 24px #ffffff;
+
 }
 
 
-/* body {
-    padding: 0%;
-    margin: 0%;
-    font-family: 'Montserrat', sans-serif;
-    /* text-align: center; */
-    /* font-weight: 700;
-    font-size:16px; */
-/* } */ 
+.form-style-errorPage{
+
+   padding: 20px;
+   max-width: 100vh;
+   margin-top: 50px;
+   justify-content: center;
+   text-align: center;
+   border-radius: 20px; 
+   /* background: linear-gradient(145deg, #dfdfe6, #ffffff); */
+   box-shadow:  12px 12px 24px #d3d3d9,
+                -12px -12px 24px #ffffff;
+
+}
+   
+
+.footer{
+   background-color: #135eaecd;
+   /* justify-content: center; */
+   position:fixed;
+   height: 34px;
+   bottom: 0;
+   color: white;
+   font-size: 16px;
+   padding: 5px;
+}

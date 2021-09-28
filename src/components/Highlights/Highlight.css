@@ -1,0 +1,45 @@
+
+.featured-image{
+    display: inline-block;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1200) {
+    .featured-image {
+
+        width: 80rem;
+
+        }
+    }
+
+@media screen and (max-width: 960px) {
+    .featured-image {
+        width: 70rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .feature > h1 {
+        flex-wrap: nowrap;
+    }
+
+    .featured-image {
+        width: auto;
+        justify-content: center;
+    }
+}
+
+
+  @media screen and (max-width: 576px) {
+    .featured-image {
+        width: 10rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .featured-image {
+        width: auto;
+    }
+}
+
+

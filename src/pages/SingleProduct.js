@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { Col, Row, Card, Button, Container } from 'react-bootstrap';
+import { Card, Button, Container } from 'react-bootstrap';
 import { FaShoppingCart } from 'react-icons/fa';
 import { Link, useHistory, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import UserContext from '../UserContext';
+
 
 function SingleProduct() {
 
@@ -35,7 +36,7 @@ function SingleProduct() {
 			setDescription(result.description);
 			setPrice(result.price);
 		})
-	}, [])
+	}, [token, productId])
 
 	const addCart = () => {
 		fetch('https://gentle-wave-67856.herokuapp.com/api/users/addCart', 
@@ -75,30 +76,26 @@ function SingleProduct() {
 
 	return(
 		<Container className="mt-5">
-			<Row className="justify-content-center">
-				<Col xs={12} md={6}>
 					<Card>
-						<Card.Header>
-							<h6> {name} </h6>
-						</Card.Header>
 						<Card.Body>
-							<Card.Text> {description} </Card.Text>
-							<h6> Price: Php <span className="mx-2">{price}</span> </h6>
+							<h3>{name}</h3>
+							<h5>Description</h5>
+							<p>{description}</p>
+							<h5>Price:</h5>
+							<p>{price}</p>
 						</Card.Body>
+
 						<Card.Footer>
 							{
 								(user.id !== null) ?
 										<Button variant="primary" onClick={ () => addCart() }><span className="p-2"><FaShoppingCart/></span>Checkout</Button>
 									:
-										<Link className="btn btn-danger" to="/login"><span className="p-2"><FaShoppingCart/></span>Checkout</Link>
+										<Link className="btn btn-danger btn-2" to="/login"><span className="p-2"><FaShoppingCart/></span>Checkout</Link>
 							}
 						</Card.Footer>
 					</Card>
-				</Col>
-			</Row>
 		</Container>
 	)
 
 }
-
 export default SingleProduct

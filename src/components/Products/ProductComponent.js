@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom'
 import {Col, Row, Card} from 'react-bootstrap';
+import './Product.css';
 
 function ProductComponent({productProp}) {
 	
@@ -12,18 +13,17 @@ function ProductComponent({productProp}) {
 	
 	return(
 		
-	<Col>
+	<Col fluid>
 		<Row>
-			<Col fluid sm={12}>
-				
-				<Card className="mb-3">
+			<Col className="container" sm={12}>
+				<Card className="product-card">
 					<Card.Body>
-						<Card.Title>{name}</Card.Title>
-						<h6>Description</h6>
+						<h3>{name}</h3>
+						<h5>Description</h5>
 						<p>{description}</p>
 						<h5>Price:</h5>
 						<p>{price}</p>
-						<Link className="btn btn-primary" to={`/products/${_id}`}>
+						<Link className="btn-style btn btn-primary" to={`/products/${_id}`}>
 							Details
 						</Link>
 					</Card.Body>

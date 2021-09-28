@@ -15,6 +15,8 @@ import AddProduct from './pages/AddProduct';
 import PageNotFound from './components/PageNotFound';
 import SingleProduct from './pages/SingleProduct';
 import MyOrder from './pages/MyOrder';
+import FooterPage from './pages/Footer';
+// import Highlights from './pages/Highlights';
 
 function App() {
 
@@ -75,8 +77,10 @@ function App() {
               <Route path="/addProducts" exact component={AddProduct}/>
               <Route path="/products/:productId" exact component={SingleProduct}/>
               <Route path="/myOrder" exact component={MyOrder}/>
+              <Route path='/#highlights' exact component={Home}/>
               <Route component={PageNotFound} />
             </Switch>
+            <FooterPage/>
         </Router>
       </UserContext.Provider>
   );

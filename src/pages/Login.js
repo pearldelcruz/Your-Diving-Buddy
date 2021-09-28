@@ -5,6 +5,7 @@ import {Redirect} from 'react-router-dom'
 
 import {Form, Button, Col, Row} from 'react-bootstrap';
 import Swal from 'sweetalert2';
+import '../App.css'
 
 function Login() {
 
@@ -90,7 +91,7 @@ function Login() {
 		: 
             <Col className="mt-5 p-3 justify-content-center">
                 <Row className="justify-content-center">
-                    <Col sm={true} md={3}>
+                    <Col sm={true} md={3} className="form-style-login">
                         <div className="mb-3 text-center"><h1 className="text-center">Login</h1></div>
                         <Form onSubmit={ (e) => login(e) }>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -105,7 +106,8 @@ function Login() {
                                 onChange={(e)=> setPassword(e.target.value) }/>
                             </Form.Group>
 
-                            <Button variant="primary" type="submit" disabled={isDisabled}>Submit</Button>
+                            <Button className="btn-style" variant="primary" type="submit" disabled={isDisabled}>Submit</Button>
+							
                         </Form>
                     </Col>
                 </Row>

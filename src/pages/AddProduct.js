@@ -50,7 +50,7 @@ function AddProduct() {
 
 			console.log(data);
 
-			if(data === true){
+			if(data !== null){
 
 				Swal.fire({
 					title: "Success",
@@ -86,7 +86,7 @@ function AddProduct() {
 		:
 		<Col className="mt-5 p-3 justify-content-center">
 			<Row className="justify-content-center">
-				<Col sm={12} md={4}>
+				<Col sm={12} md={4} className="form-style-addProduct">
 					<div className="text-center"><h1>Add Product</h1></div>
 					
 						<Form onSubmit={ e => addProduct(e)}>

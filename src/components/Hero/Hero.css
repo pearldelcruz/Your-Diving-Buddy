@@ -1,0 +1,100 @@
+
+.hero-container {
+  background: url('../../images/Dive3.svg') center center/cover no-repeat;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+  object-fit:contain;
+}
+
+.hero-container > h1 {
+  color: #fff;
+  font-size: 100px;
+  margin-top: -100px;
+}
+
+.hero-container > p {
+  margin-top: 8px;
+  color: #fff;
+  font-size: 32px;
+}
+
+.hero-btns {
+  margin-top: 32px;
+  width: 28vh;
+  text-align: center;
+  border-radius: 50px;
+  background: #054489aa;
+  box-shadow:  25px 25px 47px #111b29,
+              -25px -25px 47px #05316a;
+}
+
+.hero-btns .btn {
+  margin: 10px;
+}
+
+@media screen and (max-width: 1200) {
+    .hero-container > h1 {
+      font-size: 70px;
+      margin-top: 20px;
+      text-align: center;
+    }
+  
+    .hero-container > p {
+      font-size: 30px;
+      padding-inline: 2px;
+      padding: auto;
+      text-align: center;
+    }
+  }
+
+@media screen and (max-width: 960px) {
+  .hero-container > h1 {
+    font-size: 70px;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .hero-container > p {
+    font-size: 30px;
+    padding-inline: 2px;
+    padding: auto;
+    text-align: center;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .hero-container > h1 {
+    font-size: 50px;
+    margin-top: -200px;
+    text-align: center;
+  }
+
+  .hero-container > p {
+    font-size: 20px;
+  }
+}
+
+  @media screen and (max-width: 576px) {
+    .hero-container > h1 {
+      font-size: 45px;
+      margin-top: 20px;
+      padding: auto;    
+      text-align: center;
+    }
+  
+    .hero-container > p {
+      font-size: 20px;
+    }
+
+  .btn-mobile {
+    display: block;
+    text-decoration: none;
+  }
+
+}

@@ -1,13 +1,13 @@
 import React, {useContext} from 'react';
 import { Link, NavLink, useHistory } from 'react-router-dom';
-import {Nav, Navbar} from 'react-bootstrap'
-import {FaUserPlus, FaShoppingCart, FaHome, FaSistrix} from 'react-icons/fa'
+import {Nav, Navbar} from 'react-bootstrap';
+import {FaUserPlus, FaShoppingCart, FaHome, FaSistrix} from 'react-icons/fa';
 import {FiLogIn, FiLogOut} from 'react-icons/fi'
-import {RiMenuAddLine} from 'react-icons/ri'
+import {RiMenuAddLine} from 'react-icons/ri';
+import {GiWhaleTail} from 'react-icons/gi'
+import './Navs.css'
 
-
-// import logo2 from './../../images/logo2.png';
-import UserContext from './../../UserContext';
+import UserContext from '../../UserContext';
 
 function Navs() {
 
@@ -30,8 +30,8 @@ let leftNav = (user.id !== null) ?
             </>
             :
             <>
-            <Nav.Link onClick={logout}><span className="px-2"><FiLogOut/></span>Logout</Nav.Link>
             <Nav.Link as={NavLink} to="/myOrder"><span className="px-2"><FaShoppingCart/></span>Cart</Nav.Link>
+            <Nav.Link onClick={logout}><span className="px-2"><FiLogOut/></span>Logout</Nav.Link>
             </>
         :
 
@@ -44,13 +44,12 @@ let leftNav = (user.id !== null) ?
 
     return (
         
-        <Navbar bg="light" expand="lg" className="nav">
-        <Navbar.Brand as={Link} to="/">
-        {/* <img src={logo2} width={100}/> */}
+        <Navbar expand="lg" className="nav-style">
+        <Navbar.Brand as={Link} to="/" className="pl-3 nav-icon"> <GiWhaleTail size="35px"/>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-            <Nav>
+            <Nav className="ml-auto">
             <Nav.Link as={NavLink} to="/"><spam className="px-2"><FaHome/></spam>Home</Nav.Link>
             <Nav.Link as={NavLink} to="/products"><span className="px-2"><FaSistrix/></span> View Products</Nav.Link>
             {/* </Nav>

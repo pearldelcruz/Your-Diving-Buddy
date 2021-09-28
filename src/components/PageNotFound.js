@@ -1,21 +1,17 @@
-import React from 'react'
-import { Container, Jumbotron, Row, Col } from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
+import '../App.css';
 
 function PageNotFound() {
     return (
-        <Container>
+        <Container fluid='md' className="mt-5">
             <Row>
-                
-                <Col className="pt-5 mt-5">
-                    <Jumbotron fluid className="px-3 text-center">
-                        <h1>404</h1>
-                        <p>
-                        Page not Found
-                        </p>  
-                        <Link to="/">Go Back to Home</Link>
-                    </Jumbotron>  
-                </Col>
+                <Col className="text-center form-style-errorPage">  
+                <h1>404</h1> 
+                <p> Page not Found</p> 
+                <Link to="/">Go Back to Home</Link>
+                </Col> 
             </Row>
         </Container>
     )
