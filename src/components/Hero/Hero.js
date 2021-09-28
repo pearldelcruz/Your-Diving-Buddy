@@ -20,7 +20,7 @@ function Hero() {
                 {   (user.id === null|| user.isAdmin !== true)?
                     <>
                         <span className="p-3">
-                            <Button size="lg" className='hero-btns btns' as={Link} to="/products">Join us a program</Button>
+                            <Button size="lg" className='hero-btns btns' as={Link} to="/products">Join a program</Button>
                         </span>
                     </>
                         :
