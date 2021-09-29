@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
-import {Button, Jumbotron} from 'react-bootstrap'
-import { FaLink } from 'react-icons/fa';
+import {Button} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import UserContext from '../../UserContext';
 import './Hero.css'

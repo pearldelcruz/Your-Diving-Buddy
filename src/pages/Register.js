@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState}from 'react'
 import { Col, Row, Form, Button } from 'react-bootstrap'
-import { useHistory, Redirect, Link } from 'react-router-dom';
+import { useHistory, Redirect } from 'react-router-dom';
 import UserContext from './../UserContext'
 import Swal from 'sweetalert2';
 import '../App.css'

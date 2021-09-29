@@ -1,8 +1,8 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Card, Button, Container, Row, Col} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import './Highlight.css'
-import UserContext from '../../UserContext';
+
 import Dive1 from '../../images/Dive1.png';
 import Dive2 from '../../images/Dive2.png';
 import Dive3 from '../../images/Dive3.png';
@@ -49,7 +49,7 @@ function Feature() {
         const [description, setDescription] = useState('');
     
 
-        const {user} = useContext(UserContext);
+       
     
         const fetchData = () => {
             let token = localStorage.getItem('token')

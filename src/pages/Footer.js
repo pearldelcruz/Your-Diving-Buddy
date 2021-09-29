@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import {FaFacebook, FaInstagram, FaTwitter, FaCopyright} from 'react-icons/fa'
 
 
